@@ -3,24 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		016955DF20D990E800901D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016955DE20D990E800901D18 /* AppDelegate.swift */; };
-		016955E120D990E800901D18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016955E020D990E800901D18 /* ViewController.swift */; };
 		016955E320D990E900901D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016955E220D990E900901D18 /* Assets.xcassets */; };
 		016955E620D990E900901D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016955E420D990E900901D18 /* Main.storyboard */; };
+		016955EF20D9912000901D18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016955EE20D9912000901D18 /* ViewController.swift */; };
+		016955F120D9971100901D18 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 016955F020D9963900901D18 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		016955DB20D990E800901D18 /* McCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		016955DE20D990E800901D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		016955E020D990E800901D18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		016955E220D990E900901D18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		016955E520D990E900901D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		016955E720D990E900901D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016955E820D990E900901D18 /* McCamera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = McCamera.entitlements; sourceTree = "<group>"; };
+		016955EE20D9912000901D18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		016955F020D9963900901D18 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				016955DE20D990E800901D18 /* AppDelegate.swift */,
-				016955E020D990E800901D18 /* ViewController.swift */,
+				016955F020D9963900901D18 /* Resnet50.mlmodel */,
+				016955EE20D9912000901D18 /* ViewController.swift */,
 				016955E220D990E900901D18 /* Assets.xcassets */,
 				016955E420D990E900901D18 /* Main.storyboard */,
 				016955E720D990E900901D18 /* Info.plist */,
@@ -95,11 +98,17 @@
 				TargetAttributes = {
 					016955DA20D990E800901D18 = {
 						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 016955D620D990E800901D18 /* Build configuration list for PBXProject "McCamera" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -133,7 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				016955E120D990E800901D18 /* ViewController.swift in Sources */,
+				016955EF20D9912000901D18 /* ViewController.swift in Sources */,
+				016955F120D9971100901D18 /* Resnet50.mlmodel in Sources */,
 				016955DF20D990E800901D18 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,8 +270,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -274,10 +283,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R986STKYJ7;
 				INFOPLIST_FILE = McCamera/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ByCyril.McCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -293,10 +299,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R986STKYJ7;
 				INFOPLIST_FILE = McCamera/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ByCyril.McCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
